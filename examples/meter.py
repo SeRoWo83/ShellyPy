@@ -1,7 +1,7 @@
-import ShellyPy
+import shelly
 
 # try connecting to the Shelly device under that ip
-device = ShellyPy.Shelly("192.168.68.121")
+device = shelly.Shelly("192.168.68.121")
 # WILL throw an exception if the device is not reachable, gives a bad response or requires a login
 
 deviceMeter = device.meter(0)   #request meter information

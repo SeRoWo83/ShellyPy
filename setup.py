@@ -7,7 +7,7 @@ with open('requirements.txt') as f:
   requirements = f.read().splitlines()
 
 version = ''
-with open('ShellyPy/__init__.py') as f:
+with open('shelly/__init__.py') as f:
     version = re.search(r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]', f.read(), re.MULTILINE).group(1)
 
 if not version:
@@ -19,7 +19,7 @@ with open("README.md", "r") as fh:
 
 
 setuptools.setup(
-    name="ShellyPy",
+    name="shellypy",
     version=version,
     author="Jan Drögehoff",
     author_email="jandroegehoff@gmail.com",
@@ -27,7 +27,7 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/Jan200101/ShellyPy",
-    packages=["ShellyPy"],
+    packages=["shellypy"],
     license="MIT",
     install_requires=requirements,
     include_package_data=True,

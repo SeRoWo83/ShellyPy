@@ -1,3 +1,13 @@
 requests
 types-requests
 
+numpy
+
+mariadb
+mysql-connector-python
+
+# Plot from database:
+matplotlib; sys_platform == 'win32'
+pandas; sys_platform == 'win32'
+pandas-stubs; sys_platform == 'win32'
+sqlalchemy; sys_platform == 'win32'

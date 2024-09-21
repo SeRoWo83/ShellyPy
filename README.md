@@ -9,26 +9,28 @@ other packages like [pyShelly](https://github.com/StyraHem/pyShelly) only suppor
 
 ## examples
 #### relay
-a simple working example for the Shelly 1 that turns a relay on 
-```python
-import ShellyPy
+a simple working example for the Shelly 1 that turns a relay on
 
-device = ShellyPy.Shelly("192.168.0.5")
+```python
+import shelly
+
+device = shelly.Shelly("192.168.0.5")
 
 device.relay(0, turn=True)
 ```
 [examples/toggle_relay.py](examples/toggle_relay.py)
 
 #### monitor
-a simple working example for the Shelly 1 that request monitor information 
+a simple working example for the Shelly 1 that request monitor information
+
 ```python
-import ShellyPy
+import shelly
 
-device = ShellyPy.Shelly("192.168.68.121")
+device = shelly.Shelly("192.168.68.121")
 
-deviceMeter = device.meter(0)   #request meter information
-print(deviceMeter['power'])     #print power information
-print(deviceMeter['total'])     #print total information
+deviceMeter = device.meter(0)  # request meter information
+print(deviceMeter['power'])  # print power information
+print(deviceMeter['total'])  # print total information
 ```
 other examples are available as well [examples/meter.py](examples/meter.py)
 

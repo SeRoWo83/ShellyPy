@@ -23,6 +23,7 @@ class Shelly(_ShellyBase):
 
     @staticmethod
     def __detect(ip: str, port: int, proto: str = 'http') -> Type[_ShellyBase]:
+
         url: str = f"{proto}://{ip}:{port}/shelly"
 
         response: Response = get(url, timeout=5)
