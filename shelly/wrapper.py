@@ -8,6 +8,7 @@ from .base import _ShellyBase
 from .error import BadLogin, NotFound, BadResponse
 from .gen1 import ShellyGen1
 from .gen2 import ShellyGen2
+from .gen3 import ShellyGen3
 
 
 class Shelly(_ShellyBase):
@@ -40,12 +41,15 @@ class Shelly(_ShellyBase):
 
         gen: int = response_data.get("gen", 1)
 
-        if gen == 1:
-            return ShellyGen1
-        elif gen == 2:
-            return ShellyGen2
-        else:
-            raise ValueError(f"Generation {gen} not supported")
+        match gen:
+            case 1:
+                return ShellyGen1
+            case 2:
+                return ShellyGen2
+            case 3:
+                return ShellyGen3
+            case _:
+                raise ValueError(f"Generation {gen} not supported")
 
     def __repr__(self) -> str:
         return self._instance.__repr__()
