@@ -90,3 +90,9 @@ class Shelly(_ShellyBase):
 
     def emeter(self, index: int) -> dict[str, Any]:
         return self._instance.emeter(index)
+
+    def temperature(self, index: int, fahrenheit: bool = False) -> float:
+        return self._instance.temperature(index, fahrenheit)
+
+    def humidity(self, index: int) -> float:
+        return self._instance.humidity(index)

@@ -1,6 +1,7 @@
 from typing import Any, Optional
 from json.decoder import JSONDecodeError
 
+from numpy import nan
 from requests import post
 from requests import Response
 from requests.auth import HTTPBasicAuth
@@ -170,6 +171,17 @@ class ShellyGen1(_ShellyBase):
 
     def emeter(self, index: int) -> dict[str, Any]:
         return self.post(f"emeter/{index}")
+
+    def temperature(self, index: int, fahrenheit: bool = False) -> float:
+        scale = "tF" if fahrenheit else "tC"
+        status = self.status()
+        temperature = status.get("tmp", {}).get(scale, nan)
+        return temperature
+
+    def humidity(self, index: int) -> float:
+        status = self.status()
+        humidity = status.get("hum", {}).get("value", nan)
+        return humidity
 
 # backwards compatibility with old code
 Shelly = ShellyGen1

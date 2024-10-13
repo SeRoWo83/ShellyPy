@@ -185,3 +185,26 @@ class _ShellyBase:
         @return     returns attributes dict of emeter
         """
         ...
+
+
+    @abstractmethod
+    def temperature(self, index: int, fahrenheit: bool = False) -> float:
+        """
+        @brief      Get temperature
+
+        @param      index  the index of the temperature component instance. When in doubt use 0
+        @param      fahrenheit  return temperature in Fahrenheit.
+        @return     returns temperature in degree Celsius (default) or Fahrenheit.
+        """
+        ...
+
+
+    @abstractmethod
+    def humidity(self, index: int) -> float:
+        """
+        @brief      Get humidity
+
+        @param      index  the index of the humidity component instance. When in doubt use 0
+        @return     returns relative humidity in percent.
+        """
+        ...

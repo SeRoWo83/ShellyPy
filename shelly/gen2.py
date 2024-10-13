@@ -1,6 +1,7 @@
 from typing import Any, Optional
 from json.decoder import JSONDecodeError
 
+from numpy import nan
 from requests import post
 from requests import Response
 from requests.auth import HTTPDigestAuth
@@ -138,3 +139,12 @@ class ShellyGen2(_ShellyBase):
 
     def emeter(self, index: int) -> dict[str, Any]:
         raise NotImplementedError("Unavailable")
+
+    def temperature(self, index: int, fahrenheit: bool = False) -> float:
+        scale = "tF" if fahrenheit else "tC"
+        temperature = self.post("Temperature.GetStatus", {"id": index}).get(scale, nan)
+        return temperature
+
+    def humidity(self, index: int) -> float:
+        humidity = self.post("Humidity.GetStatus", {"id": index}).get("rh", nan)
+        return humidity
