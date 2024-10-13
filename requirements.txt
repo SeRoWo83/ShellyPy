@@ -1,4 +1,14 @@
-requests
-types-requests
+-r requirements-package.txt
 
-numpy
+#builduíng package
+setuptools
+types-setuptools
+
+# For examples:
+mariadb
+
+# Plot from database:
+matplotlib #; sys_platform == 'win32'
+pandas #; sys_platform == 'win32'
+pandas-stubs #; sys_platform == 'win32'
+sqlalchemy #; sys_platform == 'win32'
