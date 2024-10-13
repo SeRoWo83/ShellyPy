@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import setuptools
+from setuptools import setup, find_packages
 import re
 
 with open('requirements-package.txt') as f:
@@ -14,8 +14,7 @@ if not version:
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
-
-setuptools.setup(
+setup(
     name="shellypy2",
     version=version,
     author="Sebastian Wolf",
@@ -24,7 +23,7 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/SeRoWo83/ShellyPy",
-    packages=["shellypy2"],
+    packages=find_packages(),
     license="MIT",
     install_requires=requirements,
     include_package_data=True,
@@ -33,4 +32,5 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
+    python_requires='>=3.10',
 )
