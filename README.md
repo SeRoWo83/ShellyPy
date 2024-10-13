@@ -15,9 +15,9 @@ only support CoAP or MSQT, neither I am comfortable using in personal projects
 a simple working example for the Shelly 1 that turns a relay on
 
 ```python
-import shelly
+import shellypy
 
-device = shelly.Shelly("192.168.0.5")
+device = shellypy.Shelly("192.168.0.5")
 
 device.relay(0, turn=True)
 ```
@@ -27,9 +27,9 @@ device.relay(0, turn=True)
 a simple working example for the Shelly 1 that request monitor information
 
 ```python
-import shelly
+import shellypy
 
-device = shelly.Shelly("192.168.68.121")
+device = shellypy.Shelly("192.168.68.121")
 
 deviceMeter = device.meter(0)  # request meter information
 print(deviceMeter['power'])  # print power information

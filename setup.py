@@ -5,7 +5,7 @@ import re
 with open('requirements-package.txt') as f:
     requirements = f.read().splitlines()
 
-with open('shelly/__init__.py') as f:
+with open('shellypy/__init__.py') as f:
     version = re.search(r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]', f.read(), re.MULTILINE).group(1)
 
 if not version:
