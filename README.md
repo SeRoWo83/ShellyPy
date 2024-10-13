@@ -1,10 +1,13 @@
-# ShellyPy
+# shellypy2
 not to be confused with [pyShelly](https://github.com/StyraHem/pyShelly)  
-Python 2 and 3 Wrapper around the Shelly HTTP api
+Python 3 Wrapper around the Shelly HTTP api forked from the 
+original [ShellyPy](https://pypi.org/project/ShellyPy/) project 
+that seems to be dead or at least sleeping at the moment.
 
 
 ## why
-other packages like [pyShelly](https://github.com/StyraHem/pyShelly) only support CoAP or MSQT, neither I am comfortable with using in personal projects
+other packages like [pyShelly](https://github.com/StyraHem/pyShelly) 
+only support CoAP or MSQT, neither I am comfortable using in personal projects
 
 
 ## examples
@@ -39,12 +42,13 @@ other examples are available as well [examples/meter.py](examples/meter.py)
 - Shelly1
 - Shelly1PM
 - Shelly2
+- Shelly2PM
 - Shelly2.5
 - Shelly4Pro (untested)
 - Shelly Plug (untested)
-- Shelly PlugS (untested)
+- Shelly PlugS
 - Shelly Bulb (untested)
-- Shelly H&T (untested)
+- Shelly H&T (Gen 1 and Gen 3)
 - Shelly Smoke (untested)
 - Shelly EM (untested)
 - Shelly flood (untested)
@@ -54,8 +58,9 @@ other examples are available as well [examples/meter.py](examples/meter.py)
 - Shelly RGBW (documentation is incomplete)
 
 ## applicability
-this wrapper is best used in closed networks where other solutions are either not an option or not desired  
-give your shelly devices static IP adresses for best results
+this wrapper is best used in closed networks where other solutions are either 
+not an option or not desired give your shelly devices static IP adresses for 
+best results
 
 
 ## license
